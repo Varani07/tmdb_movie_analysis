@@ -1,0 +1,27 @@
+Registro de Progresso - Projeto TMDB
+
+
+[25-02-2025 Terça-Feira]
+ - Estrutura de arquivos esquematizada e implementada.
+ - Conexão com o MySQL e métodos de interação com o banco de dados.
+ - Configuração do .env, .env.example, .gitignore
+ - Moldagem inicial Dockerfile, docker-compose.yml e environment.yml.
+ - arquivos __init__.py criados.
+ - Tabelas do banco de dados criadas na pasta mysql-init.
+ 
+[26-02-2025 Quarta-Feira]
+ - Melhorias e testes realizados no Docker (Linux/Ubuntu).
+ - Integração do arquivo tmdb_api.py.
+ - Criado caixas.py para evitar redundancia.
+ - entrypoint.sh feito com o objetivo de fazer a aplicação aguardar o banco de dados para rodar.
+ - Afim de registros, feito registro_trabalho.txt.
+ - main.py estruturada.
+ - Conexão com o banco e API testados com Docker e Dev Contrainers (Extensão do VSCode).
+
+
+A Fazer:
+ - Testar aplicação em Windows
+ - Criar README.md
+ - Passar códigos da main.py opção 3 para load_movies.py
+ - Implementar lógica em test_1.py e test_2.py
+ - Criar a classe Filmes para lidar com Recomendações

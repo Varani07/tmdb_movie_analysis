@@ -1,4 +1,4 @@
-from db import ConexaoBanco
+from .db import ConexaoBanco
 from mysql.connector import Error
 
 class DAO():

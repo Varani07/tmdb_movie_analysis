@@ -2,22 +2,28 @@ version: '3.8'
 
 services:
   app:
-    build: .
+    build: 
+      context: .
+    volumes:
+      - .:/usr/src/app
     container_name: tmdb_app
+    restart: on-failure
     depends_on:
       - db
     env_file:
       - .env
+    stdin_open: true
+    tty: true
     working_dir: /usr/src/app
-    command: ["bash", "-c", "source activate tmdb_env && python main.py"]
+    command: ["/bin/bash", "-c", "source activate tmdb_env && python main.py"]
   db:
     image: mysql:8
     container_name: tmdb_db
-    restart: always
+    restart: on-failure
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_USER: root
-      MYSQL_PASSWORD: ""
       MYSQL_DATABASE: tmdb_movie_analysis
     ports:
-      - "3306:3306"
+      - "3307:3306"
+    volumes:
+      - ./mysql-init:/docker-entrypoint-initdb.d

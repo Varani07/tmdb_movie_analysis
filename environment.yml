@@ -6,3 +6,4 @@ dependencies:
   - python=3.9
   - mysql-connector-python
   - requests
+  - python-dotenv

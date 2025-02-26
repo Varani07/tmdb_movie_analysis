@@ -1,0 +1,1 @@
+from .load_movies import carregar_filmes
