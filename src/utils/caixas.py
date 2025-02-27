@@ -12,6 +12,12 @@ class Caixas():
         print("--------------------")
         print()
     @staticmethod
+    def esperava_caracter_valido():
+        print("-----------------------------")
+        print("| DIGITE UM CARACTER VÁLIDO |")
+        print("-----------------------------")
+        print()
+    @staticmethod
     def sem_filmes():
         print("-------------------------------------")
         print("| PRIMEIRO ESCOLHA A TERCEIRA OPÇÃO |")
@@ -22,6 +28,13 @@ class Caixas():
         print("---------------------------------")
         print("| OS FILMES JÁ FORAM CARREGADOS |")
         print("---------------------------------")
+        print()
+    @staticmethod
+    def escolha_excede_num_filmes(num_filmes):
+        print()
+        print(" Escolha excede o número de filmes disponíveis....")
+        print(f" Número de filmes disponíveis: {num_filmes}")
+        print()
         print()
     @staticmethod
     def filmes_carregados():

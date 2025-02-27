@@ -1,7 +1,18 @@
 import json, os
 from utils import info_filmes, DAO as dao, Caixas as cx
 
-def carregar_filmes():
+def carregar_filmes(quantidade_personalizada=False, num=0):
+    json_data_id_filmes = info_filmes("filmes")
+    data_id_filmes = json.loads(json_data_id_filmes)
+    id_filmes = [filme["id"] for filme in data_id_filmes["results"]]
+
+    if quantidade_personalizada:
+        if len(id_filmes) < num:
+            cx().escolha_excede_num_filmes(num)
+            return False
+        else:
+            id_filmes = [idf for idf in id_filmes[:num]]
+        
     json_data_generos = info_filmes("generos")
     data_generos = json.loads(json_data_generos)
 
@@ -10,10 +21,6 @@ def carregar_filmes():
         nome_genero = genre["name"]
         dao_inserir_genero = dao()
         dao_inserir_genero.inserir("generos", "id_genero, nome_genero", "%s, %s", (id_genero, nome_genero))
-
-    json_data_id_filmes = info_filmes("filmes")
-    data_id_filmes = json.loads(json_data_id_filmes)
-    id_filmes = [filme["id"] for filme in data_id_filmes["results"]]
 
     for id_filme in id_filmes:
         json_data_info_filmes = info_filmes("info", id_filme)
@@ -33,10 +40,12 @@ def carregar_filmes():
             dao_inserir_ator = dao()
             dao_inserir_ator.inserir("atores", "id_filme, nome_ator", "%s, %s", (id_filme, nome_ator))
 
-    cx().filmes_carregados()    
+    cx().filmes_carregados()  
+    return True  
 
 def estrutura_carregar_filmes():
     running = True
+    tem_filmes = False
     while running:
         cx().carregando_filmes()
         print("1 - Carregar todos os Filmes da primeira página.")
@@ -46,5 +55,35 @@ def estrutura_carregar_filmes():
         try:
             num = int(input("Escolha uma opção: "))
             os.system("clear")
+
+            if num in range(1, 4):
+                if num == 1:
+                    tem_filmes = carregar_filmes()
+
+                elif num == 2:
+                    quantos_filmes = estrutura_quantos_filmes()
+                    if quantos_filmes != 0:
+                        tem_filmes = carregar_filmes(True, quantos_filmes)
+
+                else:
+                    return tem_filmes
+            else:
+                cx().int_errado()
         except ValueError:
             cx().esperava_int()
+
+def estrutura_quantos_filmes():
+    running = True
+    while running:
+        try:
+            num = int(input("Digite a quantidade de filmes que gostaria de carregar ou use * para voltar: "))
+            os.system("clear")
+            if num != 0:
+                return num
+            else:
+                cx().int_errado()
+        except ValueError:
+            if num == "*":
+                return 0
+            else:
+                cx().esperava_caracter_valido()

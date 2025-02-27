@@ -1,4 +1,4 @@
-from src import DAO as dao, Caixas as cx, info_filmes, carregar_filmes
+from src import DAO as dao, Caixas as cx, estrutura_carregar_filmes
 import os
 
 def main():
@@ -12,9 +12,9 @@ def main():
         if not tem_filmes:
             print("* primeiro escolha a terceira opção para carregar os filmes *")
         print()
-        print("1. Análise de filmes. (test_1.py)")
-        print("2. Recomendação de filmes. (test_2.py)")
-        print("3. Carregar informações dos filmes no banco.")
+        print("1. Análise de filmes (test_1.py)")
+        print("2. Recomendação de filmes (test_2.py)")
+        print("3. Carregar informações dos filmes no banco")
         print("4. Sair")
         print()
 
@@ -39,7 +39,7 @@ def main():
                     if tem_filmes:
                         cx().filmes_ja_carregados()
                     else:
-                        carregar_filmes()
+                        tem_filmes = estrutura_carregar_filmes()
 
                 else:
                     running = False

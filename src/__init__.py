@@ -1,2 +1,2 @@
-from src.utils import DAO, info_filmes, Caixas
-from src.scripts import carregar_filmes
+from src.utils import DAO, Caixas
+from src.scripts import estrutura_carregar_filmes

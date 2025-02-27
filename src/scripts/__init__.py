@@ -1,1 +1,1 @@
-from .load_movies import carregar_filmes
+from .load_movies import estrutura_carregar_filmes
