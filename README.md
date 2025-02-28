@@ -13,16 +13,18 @@ primeiro passo, se estiver utilizando Linux pode pular para o passo número 7.*
 ### 1. Abra o Terminal e rode este comando para instalar o WSL: `wsl --install`
     1. Reinicie o computador após a instalação.
 
-### 2. Abra o Terminal (Admin) e rode os seguintes comandos: `dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart` `dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart`
+### 2. Abra o Terminal (Admin) e rode os seguintes comandos:
+    `dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart`
+    `dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart`
     1. Reinicie o computador.
 
-### 3. Ative a Virtualização na BIOS.
+3. Ative a Virtualização na BIOS.
     1. Para ter certeza de que a virtualização está ativada abra o gerenciador de tarefas (Ctrl + Shift + Esc).
     2. Vá até a aba desempenho.
     3. Clique em CPU no lado esquerdo.
     4. Na parte inferior da tela deve aparecer algo como 'Virtualização: Habilitado' se tudo estiver de acordo.
 
-### 4. No Terminal rode o seguinte comando: `wsl --install -d Ubuntu-24.04`
+4. No Terminal rode o seguinte comando: `wsl --install -d Ubuntu-24.04`
 
 5. Pesquise por Ubuntu no menu Iniciar e abra.
 
