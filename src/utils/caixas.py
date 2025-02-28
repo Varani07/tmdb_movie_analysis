@@ -106,3 +106,8 @@ class Caixas():
         print(f" {num}. Nome: {nome}    ID: {id}")
         print(f" | Gêneros: {generos}")
         print(f" | Sinopse: {sinopse}")
+    @staticmethod
+    def filmes_db(num, nome, id):
+        print()
+        print(" - - - - - - - - - - - - - - - - - - - -")
+        print(f" {num}. Nome: {nome}    ID: {id}")

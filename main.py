@@ -1,5 +1,6 @@
 from src import DAO as dao, Caixas as cx
-from src import estrutura_quantos_filmes, estrutura_analise_filmes, escolha_um_filme, carregar_generos
+from src import estrutura_quantos_filmes, estrutura_analise_filmes
+from src import escolha_um_filme, carregar_generos, ver_filmes
 import os
 
 def main():
@@ -48,7 +49,7 @@ def main():
 
                 elif num == 4:
                     if tem_filmes:
-                        pass
+                        ver_filmes()
                     else:
                         cx().sem_filmes()
 
