@@ -37,10 +37,10 @@ primeiro passo, se estiver utilizando Linux pode pular para o passo número 7.*
     sudo apt install -y docker.io
     sudo usermod -aG docker $USER
     newgrp docker
-    1. Rode `docker run hello-world` para testar.
+    1. Rode 'docker run hello-world' para testar.
 
 ### 8. Verifique se o git está instalado corretamente com `git --version`.
-    1. Caso não esteja rode `sudo apt update && sudo apt install -y git`
+    1. Caso não esteja rode 'sudo apt update && sudo apt install -y git'
 
 ### 9. Rode os seguintes comandos:
     git clone https://github.com/Varani07/tmdb_movie_analysis.git
