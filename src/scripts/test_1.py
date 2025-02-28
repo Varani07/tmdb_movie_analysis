@@ -10,11 +10,10 @@ def estrutura_analise_filmes():
         print("3. Top 5 Atores com maior bilheteria.")
         print("4. Voltar.")
         print()
+        answer = input("Escolha uma opção: ")
+        os.system("clear")
         try:
-            
-            num = input("Escolha uma opção: ")
-            os.system("clear")
-            int(num)
+            num = int(answer)
             if num in range(1, 5):
                 if num == 1:
                     participacao_atores()
