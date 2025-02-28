@@ -72,3 +72,28 @@ class Caixas():
         print(" - - -  Recomendação de Filmes - - - ")
         print()
         print()
+    @staticmethod
+    def info_atores_quantidade_filmes(nome, quantidade, filmes):
+        print()
+        print(" - - - - - - - - - - - - -")
+        print(f" | Nome: {nome}")
+        print(f" | Quantidade de filmes que atuou: {quantidade}")
+        print(" | Filmes:")
+        for filme in filmes:
+            print(f" | - {filme}")
+    @staticmethod
+    def top_atores_bilheteria(num:int, ator:str, info:dict):
+        revenue_formatado = f"${info['revenue']:,.2f}"
+        print()
+        print(" - - - - - - - - - - - - -")
+        print(f" {num}. {ator}: {revenue_formatado}")
+        print(" | Filmes:")
+        for filme, receita in info['filmes'].items():
+            receita_formatada = f"${receita:,.2f}"
+            print(f" | - {filme}: {receita_formatada}")
+    @staticmethod
+    def info_quantidade_generos(nome, quantidade):
+        print()
+        print(" - - - - - - - - - - - - -")
+        print(f" | Nome: {nome}")
+        print(f" | Quantidade de filmes que contém esse gênero: {quantidade}")

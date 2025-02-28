@@ -1,12 +1,21 @@
-from src import DAO as dao, Caixas as cx, estrutura_carregar_filmes
+from src import DAO as dao, Caixas as cx
+from src import estrutura_quantos_filmes, estrutura_analise_filmes, escolha_um_filme, carregar_generos
 import os
 
 def main():
+    os.system("clear")
     running = True
     while running:
         dao_verificar_filmes = dao()
         num_filmes = dao_verificar_filmes.visualizar("COUNT(*)", "filmes", "", "", one=True)
         tem_filmes = True if num_filmes and num_filmes[0] > 0 else False
+
+        dao_verificar_generos = dao()
+        num_generos = dao_verificar_generos.visualizar("COUNT(*)", "generos", "", "", one=True)
+        tem_generos = True if num_generos and num_generos[0] > 0 else False
+
+        if not tem_generos:
+            carregar_generos()
 
         cx().inicio()
         if not tem_filmes:
@@ -15,31 +24,33 @@ def main():
         print("1. Análise de filmes (test_1.py)")
         print("2. Recomendação de filmes (test_2.py)")
         print("3. Carregar informações dos filmes no banco")
-        print("4. Sair")
+        print("4. Ver filmes")
+        print("5. Sair")
         print()
 
         try:
-            num = int(input("Escolha uma opção: "))
+            num = input("Escolha uma opção: ")
             os.system("clear")
-            if num in range(1, 5):
+            num = int(num)
+            if num in range(1, 6):
 
                 if num == 1:
                     if tem_filmes:
-                        pass
+                        estrutura_analise_filmes()
                     else:
                         cx().sem_filmes()
 
                 elif num == 2:
+                    escolha_um_filme()
+
+                elif num == 3:
+                    tem_filmes = estrutura_quantos_filmes()
+
+                elif num == 4:
                     if tem_filmes:
                         pass
                     else:
                         cx().sem_filmes()
-
-                elif num == 3:
-                    if tem_filmes:
-                        cx().filmes_ja_carregados()
-                    else:
-                        tem_filmes = estrutura_carregar_filmes()
 
                 else:
                     running = False

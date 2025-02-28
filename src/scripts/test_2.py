@@ -1,4 +1,4 @@
-from utils import Caixas as cx, DAO as dao
+from ..utils import Caixas as cx, DAO as dao
 import os
 
 def escolha_um_filme():
@@ -7,8 +7,8 @@ def escolha_um_filme():
         cx().recomendacao_filmes()
         try:
             answer = input("Digite o ID de um filme ou * para voltar: ")
-            int(answer)
             os.system("clear")
+            int(answer)
 
             dao_pesquisar_id_filme = dao()
             id_filme_existe = dao_pesquisar_id_filme.visualizar("COUNT(*)", "filmes", " WHERE id_filme = %s", (answer,), True)

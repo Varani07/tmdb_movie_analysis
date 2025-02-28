@@ -1,18 +1,17 @@
 import requests
 import os
 from dotenv import load_dotenv
+import json
 
 load_dotenv()
 
 api_key = os.getenv("TMDB_API_KEY")
 
 def info_filmes(tipo, id_filme=0):
-    if tipo == "filmes":
-        url_especifica = "movie/changes?page=1"
-    elif tipo == "atores":
-        url_especifica = f"movie/{id_filme}/credits?language=en-US"
+    if tipo == "elenco":
+        url_especifica = f"movie/{id_filme}/credits"
     elif tipo == "info":
-        url_especifica = f"movie/{id_filme}?language=en-US"
+        url_especifica = f"movie/{id_filme}"
     elif tipo == "recomendacao":
         url_especifica = f"movie/{id_filme}/recommendations?language=en-US&page=1"
     else:
@@ -24,7 +23,16 @@ def info_filmes(tipo, id_filme=0):
         "accept": "application/json",
         "Authorization": f"Bearer {api_key}"
     }
-
     response = requests.get(url, headers=headers)
 
     return response.text
+
+# teste = info_filmes("elenco", 12)
+# teste = json.loads(teste)
+
+# for info in teste["cast"]:
+#     print(info["known_for_department"], info["name"])
+
+# print(teste["id"],teste["title"],teste["revenue"])
+
+# print(teste["success"])

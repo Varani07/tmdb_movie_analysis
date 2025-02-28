@@ -20,9 +20,10 @@ CREATE TABLE IF NOT EXISTS filme_genero (
     FOREIGN KEY (id_filme) REFERENCES filmes(id_filme)
 );
 
-CREATE TABLE IF NOT EXISTS atores (
-    id_ator INT AUTO_INCREMENT PRIMARY KEY,
+CREATE TABLE IF NOT EXISTS elenco (
+    id INT AUTO_INCREMENT PRIMARY KEY,
     id_filme VARCHAR(15),
-    nome_ator VARCHAR(255) NOT NULL,
+    nome VARCHAR(255) NOT NULL,
+    departamento VARCHAR(50) NOT NULL,
     FOREIGN KEY (id_filme) REFERENCES filmes(id_filme)
 );

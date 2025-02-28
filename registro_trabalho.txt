@@ -18,10 +18,12 @@ Registro de Progresso - Projeto TMDB
  - main.py estruturada.
  - Conexão com o banco e API testados com Docker e Dev Contrainers (Extensão do VSCode).
  - Melhoria realizada: load_movies.py.
+ - Estrutura do arquivo pronta: test_1, test_2.
 
 
 A Fazer:
  - Testar aplicação em Windows
  - Criar README.md
  - Implementar lógica em test_1.py e test_2.py
+ - Criar arquivo para ver filmes que foram carregados
  - Criar a classe Filmes para lidar com Recomendações
