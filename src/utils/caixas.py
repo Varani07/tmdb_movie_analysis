@@ -35,6 +35,8 @@ class Caixas():
         print("| NÃO ENCONTRAMOS O FILME QUE ESTÁ PROCURANDO |")
         print("-----------------------------------------------")
         print()
+        print(" - primeiro certifique-se de que o filme tenha sido carregado - ")
+        print()
     @staticmethod
     def escolha_excede_num_filmes(num_filmes):
         print()
@@ -97,3 +99,10 @@ class Caixas():
         print(" - - - - - - - - - - - - -")
         print(f" | Nome: {nome}")
         print(f" | Quantidade de filmes que contém esse gênero: {quantidade}")
+    @staticmethod
+    def info_recomendacao(num, nome, id, generos, sinopse):
+        print()
+        print(" - - - - - - - - - - - - -")
+        print(f" {num}. Nome: {nome}    ID: {id}")
+        print(f" | Gêneros: {generos}")
+        print(f" | Sinopse: {sinopse}")

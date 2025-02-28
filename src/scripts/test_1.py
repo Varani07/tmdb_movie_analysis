@@ -11,8 +11,10 @@ def estrutura_analise_filmes():
         print("4. Voltar.")
         print()
         try:
-            num = int(input("Escolha uma opção: "))
+            
+            num = input("Escolha uma opção: ")
             os.system("clear")
+            int(num)
             if num in range(1, 5):
                 if num == 1:
                     participacao_atores()
