@@ -1,30 +1,27 @@
 Registro de Progresso - Projeto TMDB
 
 
-[25-02-2025 Terça-Feira]
- - Estrutura de arquivos esquematizada e implementada.
- - Conexão com o MySQL e métodos de interação com o banco de dados.
- - Configuração do .env, .env.example, .gitignore
- - Moldagem inicial Dockerfile, docker-compose.yml e environment.yml.
- - arquivos __init__.py criados.
- - Tabelas do banco de dados criadas na pasta mysql-init.
- 
-[26-02-2025 Quarta-Feira]
- - Melhorias e testes realizados no Docker (Linux/Ubuntu).
- - Integração do arquivo tmdb_api.py.
- - Criado caixas.py para evitar redundancia.
- - entrypoint.sh feito com o objetivo de fazer a aplicação aguardar o banco de dados para rodar.
- - Afim de registros, feito registro_trabalho.txt.
- - main.py estruturada.
- - Conexão com o banco e API testados com Docker e Dev Contrainers (Extensão do VSCode).
- - Melhoria realizada: load_movies.py.
- - Estrutura do arquivo pronta: test_1, test_2.
+[25-02-2025 (Terça-feira)]
+- Estrutura de arquivos esquematizada e implementada.
+- Conexão com o MySQL e métodos de interação com o banco de dados.
+- Configuração do .env, .env.example, .gitignore.
+- Moldagem inicial do Dockerfile, docker-compose.yml e environment.yml.
+- Arquivos __init__.py criados.
+- Tabelas do banco de dados criadas na pasta mysql-init.
 
- [27-02-2025 Quinta-Feira]
-  - Lógica aplicada e testada em todos os arquivos (exceto funcionalidade para ver filmes carregados)
-  - Ferramenta para ver filmes carregados implementada.
+[26-02-2025 (Quarta-feira)]
+- Melhorias e testes realizados no Docker (Linux/Ubuntu).
+- Integração do arquivo tmdb_api.py.
+- Criado caixas.py para evitar redundância.
+- entrypoint.sh criado com o objetivo de fazer a aplicação aguardar o banco de dados antes de rodar.
+- Para fins de registro, criado registro_trabalho.txt.
+- main.py estruturado.
+- Conexão com o banco e a API testadas com Docker e Dev Containers (extensão do VSCode).
+- Melhoria realizada em load_movies.py.
+- Estrutura dos testes pronta: test_1, test_2.
 
-
-A Fazer:
- - Testar aplicação em Windows
- - Criar README.md
+[27-02-2025 (Quinta-feira)]
+- Lógica aplicada e testada em todos os arquivos (exceto na funcionalidade de ver filmes carregados).
+- Ferramenta para ver filmes carregados implementada.
+- Testes realizados no Windows.
+- Documentação pronta.
