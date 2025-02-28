@@ -10,4 +10,4 @@
 primeiro passo, se estiver utilizando Linux pode pular para o passo número.*
 
 
-1. Abra o Terminal e rode este comando para instalar o WSL: ´´´wsl --install´´´
+1. Abra o Terminal e rode este comando para instalar o WSL: `wsl --install
